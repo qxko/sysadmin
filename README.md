@@ -1,80 +1,114 @@
 # Linux System Administration — Learning Journey
 
-This repository documents my journey into Linux system administration through practical, hands-on exercises.
+A hands-on learning repository documenting my journey into Linux system administration, networking, and automation.
 
-## My Goal
+I'm building practical skills through small exercises, documenting what I learn, and tracking my progress as I go.
 
-I am learning Linux system administration and building practical skills step by step.
+## About This Repository
 
-## Environment
+This repository is my personal lab notebook and learning portfolio. It contains command-line exercises, system observations, networking notes, and practical tasks completed while learning Linux administration.
 
-- Operating system: Ubuntu 26.04.1 LTS
-- Device: ThinkPad X1
-- Shell: Bash
-- Git version: 2.53.0
+My focus is on understanding how things work, not just memorizing commands.
 
-## Linux Basics — Day 1
+## Learning Environment
 
-### Commands I Learned
+- **Operating System:** Ubuntu 26.04.1 LTS
+- **Device:** ThinkPad X1 Carbon Gen 9
+- **Shell:** Bash
+- **Version Control:** Git 2.53.0
+- **Repository Hosting:** GitHub
 
-| Command | Description |
-|---|---|
-| `whoami` | Shows the current username. |
-| `uname -r` | Shows the Linux kernel version. |
-| `df -h` | Shows disk space usage in a human-readable format. |
-| `hostname` | Shows the computer's hostname. |
-| `cat /etc/os-release` | Displays operating system information. |
+## Skills in Progress
 
-## Networking Basics
+- Linux command-line fundamentals
+- System information and resource inspection
+- Networking and connectivity troubleshooting
+- Ports, sockets, and service inspection
+- SSH basics
+- Git and version control
+- Users, groups, and file permissions
+- Bash scripting and automation
 
-### Network Checks
+## Practical Exercises
+
+### 1. Linux Fundamentals
+
+Commands practiced:
+
+- `whoami` — identify the current user
+- `uname -r` — display the running kernel version
+- `df -h` — inspect filesystem disk usage
+- `hostname` — display the system hostname
+- `cat /etc/os-release` — identify the operating system
+
+### 2. Networking Basics
+
+Practiced inspecting network configuration and testing connectivity.
 
 - Local IP address: `192.168.1.8`
 - Network interface: `wlp0s20f3`
 - Default gateway: `192.168.1.1`
-- Internet connectivity: Working
-- DNS resolution: Working
-- Packet loss in tests: 0%
+- Local network and internet connectivity tested successfully
+- DNS name resolution tested successfully
+- Ping tests completed with 0% packet loss during testing
 
-### Networking Commands
+Commands practiced:
 
-| Command | Description |
-|---|---|
-| `ip addr` | Displays network interfaces and IP addresses. |
-| `ip route` | Displays the routing table and default gateway. |
-| `hostname -I` | Displays the computer's IP addresses. |
-| `ping -c 4 1.1.1.1` | Tests connectivity to an IP address. |
-| `ping -c 4 google.com` | Tests connectivity and DNS resolution. |
+- `ip addr`
+- `ip route`
+- `hostname -I`
+- `ping -c 4 1.1.1.1`
+- `ping -c 4 google.com`
 
-## Ports and Services
+### 3. Ports and Services
 
-| Command | Description |
-|---|---|
-| `ss -tuln` | Displays listening TCP and UDP ports. |
-| `ss -ltn` | Displays listening TCP ports. |
-| `systemctl status ssh.socket` | Shows the status of the SSH socket. |
-| `sudo ufw status` | Checks the status of the UFW firewall. |
+Practiced inspecting listening ports and checking SSH-related systemd units.
 
-## What I Have Learned
+- Used `ss -tuln` to inspect listening TCP and UDP sockets
+- Used `ss -ltn` to inspect listening TCP sockets
+- Checked `ssh.service` and `ssh.socket`
+- Observed SSH socket activation and listening on port 22
+- Checked the status of UFW
 
-- How to inspect Linux system information.
-- How to check network interfaces, routes, and connectivity.
-- How to inspect listening ports.
-- How to check SSH socket and firewall status.
-- How to use Git to manage project files.
+**Firewall note:** UFW was reported as inactive during this exercise. No firewall configuration changes were made.
 
-## Learning Plan
+Commands practiced:
 
-- [x] Learn basic Linux commands.
-- [x] Check network connectivity.
-- [x] Inspect listening ports and SSH status.
-- [x] Configure Git identity.
-- [x] Clone a GitHub repository.
-- [ ] Learn Git add, commit, and push.
-- [ ] Learn Linux users and permissions.
-- [ ] Practice system and service management.
-- [ ] Learn basic Bash scripting.
+- `ss -tuln`
+- `ss -ltn`
+- `systemctl status ssh.socket`
+- `sudo ufw status`
+
+## Progress Tracker
+
+- [x] Inspect basic Linux system information
+- [x] Practice essential terminal commands
+- [x] Inspect IP addresses and routing
+- [x] Test network and DNS connectivity
+- [x] Inspect listening ports and SSH socket activation
+- [x] Configure Git identity
+- [x] Clone a repository from GitHub
+- [x] Commit and push changes to GitHub
+- [ ] Learn Linux users and groups
+- [ ] Practice file ownership and permissions
+- [ ] Learn service management with systemd
+- [ ] Practice Bash scripting
+- [ ] Explore logs and troubleshooting
+
+## What I'm Learning
+
+- How Linux systems expose information through command-line tools
+- How IP addressing, routing, and DNS work together
+- How to inspect listening sockets and system services
+- How to document technical work clearly
+- How to use Git and GitHub to track changes
+
+## Next Steps
+
+My next goal is to understand Linux users, groups, ownership, and permissions, followed by service management and basic Bash automation.
+
+This repository will evolve as I complete more hands-on exercises and build a stronger foundation in system administration.
 
 ---
 
-This repository is a record of my progress and practical Linux learning exercises.
+*Learning by doing, documenting every step, and improving one task at a time.*
