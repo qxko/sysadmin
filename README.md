@@ -119,3 +119,4 @@ This repository will evolve as I complete more hands-on exercises and build a st
 - [Linux Basics](linux-basics.md) — essential Linux commands and system fundamentals.
 - [Linux Networking](networking.md) — network interfaces, IP addresses, DNS, connectivity tests, and troubleshooting.
 - [SSH](ssh.md) — secure remote access, service status, listening ports, and basic security.
+- [SSH](ssh.md) — secure remote access, service status, listening ports, and basic security.
