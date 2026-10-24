@@ -112,3 +112,9 @@ This repository will evolve as I complete more hands-on exercises and build a st
 ---
 
 *Learning by doing, documenting every step, and improving one task at a time.*
+
+
+## Documentation
+
+- [Linux Basics](linux-basics.md) — essential Linux commands and system fundamentals.
+- [Linux Networking](networking.md) — network interfaces, IP addresses, DNS, connectivity tests, and troubleshooting.
