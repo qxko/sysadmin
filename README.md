@@ -122,7 +122,7 @@ This repository will evolve as I complete more hands-on exercises and build a st
 
 ## System dashboard app
 
-The repository also includes a responsive server fleet management dashboard in `app/`. The interface is inspired by enterprise rack-server consoles and includes a rack inventory, server health, hardware inventory, virtual machines, and event logs. It currently uses clearly labeled sample infrastructure data.
+The repository also includes a homelab management dashboard in `app/`, with a compact equipment-tree layout inspired by traditional datacenter management consoles. It covers Proxmox, NAS, Docker apps, Raspberry Pi services, networking, storage, and backups using sample infrastructure data.
 
 ### Run locally
 
@@ -134,7 +134,7 @@ python3 app/server.py
 
 Then open <http://127.0.0.1:8000> in your browser. Stop the server with `Ctrl+C`.
 
-The app is a clickable prototype and does not connect to physical servers or hypervisors. Its server actions are simulated. GitHub Pages publishes the same sample infrastructure view for anyone to open.
+The app is a clickable prototype and does not connect to physical servers, hypervisors, or Docker. Its actions are simulated. GitHub Pages publishes the sample homelab view for anyone to open.
 
 ### GitHub Pages
 

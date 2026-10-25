@@ -3,56 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f2f5f9">
-  <title>Sysadmin — Infrastructure Manager</title>
+  <meta name="theme-color" content="#f5f7f9">
+  <title>Sysadmin — Homelab Manager</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-shell">
-    <aside class="product-rail" aria-label="Main navigation">
-      <a class="rail-brand" href="#" aria-label="Sysadmin home">S</a>
-      <button class="rail-icon selected" aria-label="Infrastructure">▦</button>
-      <button class="rail-icon" aria-label="Equipment">▤</button>
-      <button class="rail-icon" aria-label="Monitoring">⌁</button>
-      <button class="rail-icon" aria-label="Activity">≋</button>
-      <div class="rail-bottom"><button class="rail-icon" aria-label="Settings">⚙</button><span class="profile-avatar">J</span></div>
+    <aside class="app-rail" aria-label="Application navigation">
+      <a class="rail-logo" href="#" aria-label="Sysadmin home">S</a>
+      <button class="rail-button active" title="Infrastructure">▦</button>
+      <button class="rail-button" title="Services">◫</button>
+      <button class="rail-button" title="Monitoring">⌁</button>
+      <button class="rail-button" title="Events">≋</button>
+      <button class="rail-button rail-bottom" title="Settings">⚙</button>
     </aside>
 
-    <aside class="tree-sidebar">
-      <div class="product-name"><span class="brand-glyph">S</span><span><strong>SYSADMIN</strong><small>INFRASTRUCTURE MANAGER</small></span></div>
-      <div class="workspace-picker"><span class="workspace-icon">⌂</span><span><small>WORKSPACE</small><strong>North Campus DC</strong></span><span class="chevron">⌄</span></div>
-      <div class="tree-caption">INFRASTRUCTURE <button aria-label="Add equipment">＋</button></div>
-      <nav class="tree-nav" aria-label="Infrastructure tree">
-        <button class="tree-node"><span class="tree-caret">⌄</span><span class="tree-icon">▣</span> Equipment</button>
-        <button class="tree-node indent"><span class="tree-caret">›</span> Chassis <span class="node-count">2</span></button>
-        <button class="tree-node indent"><span class="tree-caret">⌄</span> Rack-Mounts</button>
-        <button class="tree-node indent-2"><span class="tree-caret">›</span> Enclosures</button>
-        <button class="tree-node indent-2"><span class="tree-caret">›</span> Racks <span class="node-count">3</span></button>
-        <button class="tree-node indent selected-category"><span class="tree-caret">⌄</span> Servers <span class="node-count">6</span></button>
-        <div id="serverList" class="server-list"></div>
-        <button class="tree-node tree-spaced"><span class="tree-caret">›</span><span class="tree-icon">◇</span> Fabric interconnects</button>
-        <button class="tree-node tree-spaced"><span class="tree-caret">›</span><span class="tree-icon">▱</span> Policies</button>
-      </nav>
-      <div class="sidebar-footer"><span class="sync-dot"></span><span>All systems synced</span><span class="version">v1.0</span></div>
+    <aside class="tree-pane">
+      <div class="product-brand"><span class="brand-logo">S</span><span><strong>SYSADMIN</strong><small>HOMELAB MANAGER</small></span></div>
+      <button class="lab-selector"><span class="lab-icon">⌂</span><span><small>ENVIRONMENT</small><b>Home Lab</b></span><i>⌄</i></button>
+      <div class="tree-title">INFRASTRUCTURE <button title="Add device">＋</button></div>
+      <nav id="treeNav" class="tree-nav" aria-label="Homelab inventory"></nav>
+      <div class="tree-footer"><span class="online-dot"></span> 5 devices online <span class="build-tag">DEMO</span></div>
     </aside>
 
-    <main class="main-content">
-      <header class="topbar"><div class="breadcrumbs"><span>Equipment</span><b>/</b><span>Rack-Mounts</span><b>/</b><span>Servers</span><b>/</b><strong id="breadcrumbServer">Server 1</strong></div><div class="top-actions"><span class="demo-label"><i></i> DEMO ENVIRONMENT</span><button class="help-button" aria-label="Help">?</button><span class="top-divider"></span><button class="user-menu"><span class="profile-avatar">J</span><span>Jordan Kim</span><span class="chevron">⌄</span></button></div></header>
-      <div class="page-container">
-        <div class="page-title-row"><div><div class="eyebrow">DATACENTER / RACK M-04 / UPPER AISLE</div><h1 id="pageTitle">Server 1 <span class="model-inline" id="pageModel">ProLiant DL380 Gen11</span></h1><p class="subtitle">Physical server management and health overview</p></div><button id="refreshButton" class="refresh-button"><span>↻</span> Refresh status</button></div>
-
-        <nav class="tabs" aria-label="Server details tabs">
-          <button class="tab active" data-tab="general">General</button><button class="tab" data-tab="inventory">Inventory</button><button class="tab" data-tab="vms">Virtual Machines <span class="tab-count" id="vmTabCount">3</span></button><button class="tab" data-tab="health">Health</button><button class="tab" data-tab="logs">Event Logs <span class="tab-count">4</span></button>
-        </nav>
-
-        <div id="tabContent" class="tab-content"></div>
-        <footer class="page-footer"><span>SYSADMIN INFRASTRUCTURE MANAGER <i>•</i> SAMPLE ENVIRONMENT</span><span>Last inventory sync <strong id="syncTime">Today, 09:41 AM</strong></span></footer>
-      </div>
+    <main class="main-view">
+      <header class="topbar"><div id="breadcrumbs" class="breadcrumbs"></div><div class="top-tools"><span class="environment-tag"><i></i> SAMPLE HOMELAB</span><button class="help-button" title="About this demo">?</button><span class="top-separator"></span><button class="profile"><span class="profile-icon">J</span> Jordan <i>⌄</i></button></div></header>
+      <section class="content">
+        <div class="title-row"><div><div class="context-label" id="contextLabel">HOME LAB / COMPUTE / RACK 01</div><h1><span id="deviceTitle">lab-node-01</span><span id="deviceType" class="device-type">Proxmox Host</span></h1><p id="deviceSubtitle" class="subtitle">Lenovo ThinkCentre M920q Tiny · Hypervisor</p></div><button id="refreshButton" class="refresh"><span>↻</span> Refresh</button></div>
+        <nav id="tabs" class="tabs" aria-label="Device details"></nav>
+        <div id="viewContent" class="view-content"></div>
+        <footer class="footer"><span>SYSADMIN HOMELAB MANAGER <i>·</i> DEMONSTRATION DATA</span><span>Inventory sync <b id="syncTime">Today, 09:41</b></span></footer>
+      </section>
     </main>
   </div>
 
-  <dialog id="consoleDialog" class="console-dialog"><div class="dialog-head"><div><span class="console-live"></span><strong>Remote Console</strong><small id="consoleServerName">Server 1</small></div><button id="closeDialog" class="close-dialog" aria-label="Close">×</button></div><div class="console-screen"><div>SYSADMIN REMOTE CONSOLE <span>DEMO</span></div><p>Connected to <b id="consoleHost">srv-prod-01</b></p><pre>iLO 6 Advanced<br>Firmware 1.55 · Connected<br><br>System Power: ON<br>Health Status: OK<br><br><span>Remote console preview is simulated for this demo.</span></pre></div><div class="dialog-foot"><span>Read-only preview · no commands are sent</span><button id="doneDialog">Done</button></div></dialog>
-  <div id="toast" class="toast" role="status"></div>
+  <dialog id="infoDialog" class="info-dialog"><header><strong id="dialogTitle">Open management page</strong><button id="dialogClose" aria-label="Close dialog">×</button></header><div class="dialog-body"><span class="dialog-mark">i</span><div><b>Homelab demo action</b><p id="dialogMessage"></p><small>This prototype is not connected to physical equipment.</small></div></div><footer><button id="dialogOkay">Close</button></footer></dialog>
+  <div id="toast" role="status" class="toast"></div>
   <script src="app.js"></script>
 </body>
 </html>
