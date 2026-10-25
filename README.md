@@ -122,7 +122,7 @@ This repository will evolve as I complete more hands-on exercises and build a st
 
 ## System dashboard app
 
-The repository also includes a homelab management dashboard in `app/`, with a compact equipment-tree layout inspired by traditional datacenter management consoles. It covers Proxmox, NAS, Docker apps, Raspberry Pi services, networking, storage, and backups using sample infrastructure data.
+The repository also includes a homelab management dashboard in `app/`, with a simple equipment list and four tabs for device status, apps, storage and logs. It covers Proxmox, NAS, Docker and networking using sample homelab data.
 
 ### Run locally
 

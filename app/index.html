@@ -3,42 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f7f9">
-  <title>Sysadmin — Homelab Manager</title>
+  <meta name="theme-color" content="#f5f7f8">
+  <title>Sysadmin — Home Lab</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-shell">
-    <aside class="app-rail" aria-label="Application navigation">
-      <a class="rail-logo" href="#" aria-label="Sysadmin home">S</a>
-      <button class="rail-button active" title="Infrastructure">▦</button>
-      <button class="rail-button" title="Services">◫</button>
-      <button class="rail-button" title="Monitoring">⌁</button>
-      <button class="rail-button" title="Events">≋</button>
-      <button class="rail-button rail-bottom" title="Settings">⚙</button>
+    <aside class="rail" aria-label="Main navigation">
+      <a class="logo" href="#" aria-label="Home">S</a>
+      <button class="rail-button active" aria-label="Devices">▦</button>
+      <button class="rail-button" aria-label="Apps">◫</button>
+      <button class="rail-button" aria-label="Activity">≋</button>
+      <button class="rail-button settings" aria-label="Settings">⚙</button>
     </aside>
-
-    <aside class="tree-pane">
-      <div class="product-brand"><span class="brand-logo">S</span><span><strong>SYSADMIN</strong><small>HOMELAB MANAGER</small></span></div>
-      <button class="lab-selector"><span class="lab-icon">⌂</span><span><small>ENVIRONMENT</small><b>Home Lab</b></span><i>⌄</i></button>
-      <div class="tree-title">INFRASTRUCTURE <button title="Add device">＋</button></div>
-      <nav id="treeNav" class="tree-nav" aria-label="Homelab inventory"></nav>
-      <div class="tree-footer"><span class="online-dot"></span> 5 devices online <span class="build-tag">DEMO</span></div>
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-icon">⌂</span><span><b>HOME LAB</b><small>SYSADMIN MANAGER</small></span></div>
+      <div class="section-label">MY DEVICES <button aria-label="Add device">＋</button></div>
+      <nav id="deviceList" aria-label="Devices"></nav>
+      <div class="sidebar-foot"><i></i> 3 devices online</div>
     </aside>
-
-    <main class="main-view">
-      <header class="topbar"><div id="breadcrumbs" class="breadcrumbs"></div><div class="top-tools"><span class="environment-tag"><i></i> SAMPLE HOMELAB</span><button class="help-button" title="About this demo">?</button><span class="top-separator"></span><button class="profile"><span class="profile-icon">J</span> Jordan <i>⌄</i></button></div></header>
-      <section class="content">
-        <div class="title-row"><div><div class="context-label" id="contextLabel">HOME LAB / COMPUTE / RACK 01</div><h1><span id="deviceTitle">lab-node-01</span><span id="deviceType" class="device-type">Proxmox Host</span></h1><p id="deviceSubtitle" class="subtitle">Lenovo ThinkCentre M920q Tiny · Hypervisor</p></div><button id="refreshButton" class="refresh"><span>↻</span> Refresh</button></div>
-        <nav id="tabs" class="tabs" aria-label="Device details"></nav>
-        <div id="viewContent" class="view-content"></div>
-        <footer class="footer"><span>SYSADMIN HOMELAB MANAGER <i>·</i> DEMONSTRATION DATA</span><span>Inventory sync <b id="syncTime">Today, 09:41</b></span></footer>
-      </section>
+    <main class="main">
+      <header class="topbar"><div id="breadcrumbs"></div><div class="top-right"><span class="demo"><i></i> DEMO</span><span class="avatar">J</span></div></header>
+      <div class="content">
+        <div class="heading"><div><div class="eyebrow">HOME LAB / DEVICES</div><h1><span id="title"></span><small id="deviceType"></small></h1><p id="subtitle"></p></div><button id="refresh" class="refresh">↻ Refresh</button></div>
+        <nav class="tabs" id="tabs" aria-label="Device sections"></nav>
+        <div id="view" class="view"></div>
+        <footer>SYSADMIN HOME LAB <span>DEMO DATA</span></footer>
+      </div>
     </main>
   </div>
-
-  <dialog id="infoDialog" class="info-dialog"><header><strong id="dialogTitle">Open management page</strong><button id="dialogClose" aria-label="Close dialog">×</button></header><div class="dialog-body"><span class="dialog-mark">i</span><div><b>Homelab demo action</b><p id="dialogMessage"></p><small>This prototype is not connected to physical equipment.</small></div></div><footer><button id="dialogOkay">Close</button></footer></dialog>
-  <div id="toast" role="status" class="toast"></div>
+  <dialog id="dialog"><header><b id="dialogTitle">Demo action</b><button id="closeDialog" aria-label="Close">×</button></header><p id="dialogText"></p><button id="okay">OK</button></dialog>
+  <div id="toast" role="status"></div>
   <script src="app.js"></script>
 </body>
 </html>
