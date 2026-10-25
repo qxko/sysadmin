@@ -120,3 +120,22 @@ This repository will evolve as I complete more hands-on exercises and build a st
 - [Linux Networking](networking.md) — network interfaces, IP addresses, DNS, connectivity tests, and troubleshooting.
 - [SSH](ssh.md) — secure remote access, service status, listening ports, and basic security.
 
+## System dashboard app
+
+The repository also includes a responsive Linux system dashboard in `app/`.
+
+### Run locally
+
+From the repository root, run:
+
+```bash
+python3 app/server.py
+```
+
+Then open <http://127.0.0.1:8000> in your browser. Stop the server with `Ctrl+C`.
+
+The local Python server reads live system information and the dashboard displays it without changing system settings. The GitHub Pages version uses clearly marked sample data because a website cannot access your computer’s live system information.
+
+### GitHub Pages
+
+The workflow in `.github/workflows/pages.yml` publishes `app/` when changes are pushed to `main`. In the repository settings, open **Pages** and select **GitHub Actions** as the build and deployment source. After deployment, the site address is <https://qxko.github.io/sysadmin/>.
